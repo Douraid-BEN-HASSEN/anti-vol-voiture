@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Configuration</h5>
+      
+        <div class="form-group">
+            <div class="row my-1">
+                <div class="col-6">
+                    lat : 
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" value="{{ this.latLng.lat }}">
+                </div>
+            </div>
+
+            <div class="row my-1">
+                <div class="col-6">
+                    lng :
+                </div>
+                
+                <div class="col-6">
+                    <input type="text" class="form-control" value="{{ this.latLng.lng }}">
+                </div>
+            </div>                 
+        </div>
+
+        <div class="form-group">
+            <div class="row my-1">
+                <div class="col-6">
+                    Status : 
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary" type="button" (click)="this.enabledTrigger();">{{ this.enabled ? 'ON' : 'OFF' }}</button>
+                </div>
+            </div>
+        </div>            
+
+        <div class="form-group">
+            <div class="row my-1">
+                <div class="col-6">
+                    <label for="range">Plage de détection : </label>
+                </div>
+                <div class="col-6">
+                    <input 
+                        type="range"
+                        class="form-control-range"
+                        id="range"
+                        min="1"
+                        max="100"
+                        (input)="this.onRangeChange($event);"
+                        value="{{ this.range }}"
+                    >
+                    {{ this.range }} m
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
